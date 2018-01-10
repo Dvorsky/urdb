@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $params = [
+        'name' => 'World',
+        'nesto' => 'asd',
+    ];
+
+    return view('welcome', $params);
 });
