@@ -22,7 +22,7 @@ class CreateMoviesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('user_lists', function (Blueprint $table) {
+        Schema::table('movies', function (Blueprint $table) {
             $table->unsignedInteger('list_id');
 
             $table->foreign('list_id')->references('id')->on('user_lists');

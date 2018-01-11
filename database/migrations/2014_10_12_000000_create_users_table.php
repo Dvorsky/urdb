@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('movie_list_id');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -20,3 +20,10 @@ Route::get('/', function () {
 
     return view('welcome', $params);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('movie/add', 'MovieController@new_get')->name('get_new_movie');
+Route::post('movie/add', 'MovieController@new_post')->name('post_new_movie');
