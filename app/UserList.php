@@ -11,8 +11,8 @@ class UserList extends Model
         return $this->belongsTo('App\User')->withDefault();
     }
 
-    public function movie()
+    public function movies()
     {
-        return $this->hasMany('App\Movie');
+        return $this->hasMany('App\Movie', 'list_id', 'id');
     }
 }

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    {{ Form::model($movie, ['url' => 'movie/add']) }}
+    {{ Form::model($movie, ['url' => route('post_new_movie', ['user_id' => $user->id, 'list_id' => $list_id])]) }}
 
     <fieldset>
         <legend>Add a new movie</legend>
@@ -26,7 +26,14 @@
         <div class="form-group">
             {!! Form::label('status', 'Status', ['class' => 'col-lg-2 control-label'] )  !!}
             <div class="col-lg-10">
-                {!!  Form::select('status', ['1' => 'Finished', '2' => 'Plan to watch'],  '1', ['class' => 'form-control' ]) !!}
+                {!!  Form::select('status', ['1' => 'Finished', '2' => 'Plan to watch'],  1, ['class' => 'form-control' ]) !!}
+            </div>
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('rating', 'Rating', ['class' => 'col-lg-2 control-label'] )  !!}
+            <div class="col-lg-10">
+                {!!  Form::select('rating', ['1'=>1,'2'=>2,'3'=>3,'4'=>4,'5'=>5,'6'=>6,'7'=>7,'8'=>8,'9'=>9,'10'=>10], 0, ['class' => 'form-control' ]) !!}
             </div>
         </div>
 

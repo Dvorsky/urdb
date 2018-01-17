@@ -7,6 +7,9 @@
  */
 
 return [
+    'list_type' => [
+        '1' => 'movie',
+    ],
     'movie_status' => [
         '1' => 'Finished',
         '2' => 'Plan to watch'
