@@ -12,11 +12,11 @@ class Movie extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'status', 'rating','list_id'
+        'title', 'description', 'status', 'rating','user_list_id'
     ];
 
     public function user_list()
     {
-        return $this->belongsTo('App\UserList', 'list_id', 'id')->withDefault();
+        return $this->belongsTo('App\UserList')->withDefault();
     }
 }

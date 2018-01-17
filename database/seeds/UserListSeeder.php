@@ -13,10 +13,11 @@ class UserListSeeder extends Seeder
     {
         $factory = \Faker\Factory::create();
 
-        for ($n = 0; $n < 25; $n++) {
+        for ($n = 0; $n < 50; $n++) {
             $user_list = new App\UserList();
 
-            $user_list->list_title = $factory->text(31);
+            $user_list->title = $factory->text(31);
+            $user_list->type = 1;
             $user_list->user_id = random_int(1, 50);
 
             $user_list->save();

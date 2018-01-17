@@ -23,9 +23,9 @@ class CreateMoviesTable extends Migration
         });
 
         Schema::table('movies', function (Blueprint $table) {
-            $table->unsignedInteger('list_id');
+            $table->unsignedInteger('user_list_id');
 
-            $table->foreign('list_id')->references('id')->on('user_lists');
+            $table->foreign('user_list_id')->references('id')->on('user_lists');
         });
     }
 
