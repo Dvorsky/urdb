@@ -6,9 +6,9 @@
 
     <ul>
         <h3>Movie Lists</h3>
-        @foreach($lists as $list)
+        @foreach($lists->where('type', 1)->all() as $list)
             <li>
-                <span>{{ $list->list_title }}</span>
+                <span>{{ $list->title }}</span>
                 <ul>
                     @foreach($list->movies()->get() as $movie)
                         <li>

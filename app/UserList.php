@@ -12,7 +12,7 @@ class UserList extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'user_id', 'type',
+        'title', 'user_id', 'type'
     ];
 
     public function user()

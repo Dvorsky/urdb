@@ -64,11 +64,15 @@ class UserListsController extends Controller
             abort(403, 'Access denied');
         }
 
-        $input = $request->all();
+        $data = $request->validate([
+            'title' => 'required|min:6|max:30',
+            'type' => 'required'
+        ]);
 
         $list = new UserList();
 
-        $list->list_title = $input['list_title'];
+        $list->title = $data['title'];
+        $list->type = $data['type'];
         $list->user_id = $user->id;
 
         $list->save();
