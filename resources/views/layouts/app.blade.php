@@ -37,7 +37,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @if(Auth::user())
-                            <li><a href="{{ route('get_lists', ['user_id' => Auth::user()->id]) }}">Your Lists</a></li>
+                            <li><a href="{{ route('lists', ['user_id' => Auth::user()->id]) }}">Your Lists</a></li>
                         @endif
                     </ul>
 

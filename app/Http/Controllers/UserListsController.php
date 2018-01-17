@@ -30,7 +30,7 @@ class UserListsController extends Controller
 
         $lists = UserList::where('user_id', $user->id)->get();
 
-        return view('lists')->with(['lists'=>$lists, 'user'=>$user]);
+        return view('lists.home')->with(['lists'=>$lists, 'user'=>$user]);
     }
 
 
@@ -40,14 +40,14 @@ class UserListsController extends Controller
      * @param $user_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function new_get($user_id)
+    public function create($user_id)
     {
         if ($user_id == Auth::user()->id) {
             $user = Auth::user();
         } else {
             abort(403, 'Access denied');
         }
-        return view('new-list')->with(['list' => new UserList(), 'user' => $user ]);
+        return view('lists.create')->with(['list' => new UserList(), 'user' => $user ]);
     }
 
     /**
@@ -56,7 +56,7 @@ class UserListsController extends Controller
      * @param $user_id
      * @param Request $request
      */
-    public function new_post($user_id, Request $request)
+    public function store($user_id, Request $request)
     {
         if ($user_id == Auth::user()->id) {
             $user = Auth::user();
@@ -77,7 +77,7 @@ class UserListsController extends Controller
 
         $list->save();
 
-        return redirect()->route('get_lists', ['user_id' => $user->id]);
+        return redirect()->route('lists', ['user_id' => $user->id]);
 
 
     }

@@ -18,12 +18,12 @@
                             <span>{{ $movie->rating }}</span>
                         </li>
                     @endforeach
-                    <li><a href="{{ route('get_new_movie', ['user_id' => $user->id, 'list_id' => $list->id]) }}">Add new movie</a></li>
+                    <li><a href="{{ route('movie.create', ['user_id' => $user->id, 'list_id' => $list->id]) }}">Add new movie</a></li>
                 </ul>
             </li>
         @endforeach
     </ul>
     
-    <p><a href="{{ route('get_new_list', ['user_id' => $user->id]) }}">Add a new list</a></p>
+    <p><a href="{{ route('lists.create', ['user_id' => $user->id]) }}">Add a new list</a></p>
 
 @endsection

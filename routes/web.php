@@ -26,9 +26,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('{user_id}/lists/', 'UserListsController@get')->name('get_lists');
-Route::get('{user_id}/lists/new', 'UserListsController@new_get')->name('get_new_list');
-Route::post('{user_id}/lists/new', 'UserListsController@new_post')->name('post_new_list');
+Route::get('{user_id}/lists/', 'UserListsController@get')->name('lists');
+Route::get('{user_id}/lists/new', 'UserListsController@create')->name('lists.create');
+Route::post('{user_id}/lists/new', 'UserListsController@store')->name('lists.store');
 
-Route::get('{user_id}/lists/{list_id}/movie/add', 'MovieController@new_get')->name('get_new_movie');
-Route::post('{user_id}/lists/{list_id}/movie/add', 'MovieController@new_post')->name('post_new_movie');
+Route::get('{user_id}/lists/{list_id}/movie/add', 'MovieController@create')->name('movie.create');
+Route::post('{user_id}/lists/{list_id}/movie/add', 'MovieController@store')->name('movie.store');
