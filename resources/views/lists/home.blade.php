@@ -25,5 +25,10 @@
     </ul>
     
     <p><a href="{{ route('lists.create', ['user_id' => $user->id]) }}">Add a new list</a></p>
+    <div id="app">
+        <passport-clients></passport-clients>
+        <passport-authorized-clients></passport-authorized-clients>
+        <passport-personal-access-tokens></passport-personal-access-tokens>
 
+    </div>
 @endsection
